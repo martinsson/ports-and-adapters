@@ -1,11 +1,11 @@
 package com.schmeisky.apikata;
 
 public class Observation {
-    public Object getId() {
+    public String getId() {
         return id;
     }
 
-    public Object getStationName() {
+    public String getStationName() {
         return stationName;
     }
 
@@ -29,15 +29,15 @@ public class Observation {
         return direction;
     }
 
-    private final Object id;
-    private final Object stationName;
+    private final String id;
+    private final String stationName;
     private final String date;
     private final String time;
     private final float temperature;
     private final int pressure;
     private final String direction;
 
-    public Observation(Object id, Object stationName, String date, String time, float temperature, int pressure, String direction) {
+    public Observation(String id, String stationName, String date, String time, float temperature, int pressure, String direction) {
         this.id = id;
         this.stationName = stationName;
         this.date = date;

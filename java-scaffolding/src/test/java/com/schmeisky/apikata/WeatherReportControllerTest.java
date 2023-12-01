@@ -25,9 +25,9 @@ class WeatherReportControllerTest {
     void hasAllTheData() throws Exception {
         var expectedColumns = "id,name,date,time,temperature,pressure,wind_direction";
 
-        new WeatherReportController(new WeatherReader(), new ReportWriter()).put("3");
+        new WeatherReportController(new WeatherReader(), new ReportWriter()).put(stationId);
 
-        String content = Files.readString(Paths.get(2 + ".csv"));
+        String content = Files.readString(Paths.get(stationId + ".csv"));
         Assertions.assertThat(content).startsWith(expectedColumns);
     }
 
