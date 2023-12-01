@@ -21,7 +21,7 @@ public class WeatherReportController {
             ) {
                 final Gson gson = new Gson();
                 final Result result = gson.fromJson(inputStreamReader, Result.class);
-                try (FileWriter fileWriter = new FileWriter("result" + ".csv")) {
+                try (FileWriter fileWriter = new FileWriter(stationId + ".csv")) {
                     fileWriter.write("id,name,date,time,temperature,pressure,wind_direction\n" );
                     for (Map<String, Object> map : result.getResults()) {
                         String dateTime = (String) map.get("time");

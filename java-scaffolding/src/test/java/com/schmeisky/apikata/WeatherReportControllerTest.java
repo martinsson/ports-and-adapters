@@ -23,7 +23,7 @@ class WeatherReportControllerTest {
     @Test
     void savesTheReportAsCsv() {
         new WeatherReportController().put(stationId);
-        Assertions.assertThat(new File("result.csv")).exists();
+        Assertions.assertThat(new File(stationId + ".csv")).exists();
     }
 
     @Test
@@ -32,14 +32,14 @@ class WeatherReportControllerTest {
 
         new WeatherReportController().put(stationId);
 
-        String content = Files.readString(Paths.get("result.csv"));
+        String content = Files.readString(Paths.get(stationId + ".csv"));
         Assertions.assertThat(content).startsWith(expectedColumns);
     }
 
     @Test
     void hasSomeContent() throws IOException {
         new WeatherReportController().put(stationId);
-        var content = Files.readAllLines(Paths.get("result.csv"));
+        var content = Files.readAllLines(Paths.get(stationId + ".csv"));
         Assertions.assertThat(content).hasSizeGreaterThan(1);
         Assertions.assertThat(content.get(1)).matches("1,Reykjavik,.*,.*,.*,.*,.*");
     }
