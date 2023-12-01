@@ -15,7 +15,7 @@ public class WeatherReportController {
 
     public void put(String stationId) {
         try {
-            final URL url = Path.of("example.json").toUri().toURL();
+            final URL url = Path.of("response-example-" +stationId +".json").toUri().toURL();
             try(InputStream inputStream = url.openStream();
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)
             ) {
