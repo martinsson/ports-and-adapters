@@ -41,7 +41,7 @@ class WeatherReportControllerTest {
         new WeatherReportController().put(stationId);
         var content = Files.readAllLines(Paths.get("result.csv"));
         Assertions.assertThat(content).hasSizeGreaterThan(1);
-        Assertions.assertThat(content.get(1)).matches("1,Reykjavík,.*,.*,.*,.*,.*");
+        Assertions.assertThat(content.get(1)).matches("1,Reykjavik,.*,.*,.*,.*,.*");
     }
 
     @Test
