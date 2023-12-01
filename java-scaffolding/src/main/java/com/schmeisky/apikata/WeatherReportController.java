@@ -13,7 +13,7 @@ public class WeatherReportController {
         this.reportWriter = reportWriter;
     }
 
-    public void put(String stationId) {
+    public void saveObservationsFor(String stationId) {
         var observations = weatherReader.readWeatherReport(stationId);
         var csvLines = computeWeatherReport(observations);
         reportWriter.writeCsv(stationId, csvLines);

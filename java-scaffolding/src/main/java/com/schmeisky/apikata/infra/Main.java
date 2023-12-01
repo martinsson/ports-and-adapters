@@ -10,7 +10,7 @@ public class Main {
             WeatherReader weatherReader = new IcelandWeatherReader();
             ReportWriter reportWriter = new FileReportWriter();
             var weatherReportController = new WeatherReportController(weatherReader, reportWriter);
-            weatherReportController.put(args[0]);
+            weatherReportController.saveObservationsFor(args[0]);
         }
 
 
