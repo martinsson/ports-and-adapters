@@ -1,6 +1,6 @@
 package com.schmeisky.apikata.infra;
 
-import com.schmeisky.apikata.ReportWriter;
+import com.schmeisky.apikata.domain.ReportWriter;
 
 import java.io.FileWriter;
 import java.io.IOException;

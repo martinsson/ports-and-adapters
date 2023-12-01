@@ -1,4 +1,4 @@
-package com.schmeisky.apikata;
+package com.schmeisky.apikata.domain;
 
 import java.util.List;
 

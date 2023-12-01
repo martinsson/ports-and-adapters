@@ -1,6 +1,4 @@
-package com.schmeisky.apikata;
-
-import com.schmeisky.apikata.Observation;
+package com.schmeisky.apikata.domain;
 
 import java.util.List;
 

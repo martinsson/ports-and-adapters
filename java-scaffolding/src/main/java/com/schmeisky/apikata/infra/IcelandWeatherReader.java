@@ -1,8 +1,8 @@
 package com.schmeisky.apikata.infra;
 
 import com.google.gson.Gson;
-import com.schmeisky.apikata.Observation;
-import com.schmeisky.apikata.WeatherReader;
+import com.schmeisky.apikata.domain.Observation;
+import com.schmeisky.apikata.domain.WeatherReader;
 
 import java.io.IOException;
 import java.io.InputStream;

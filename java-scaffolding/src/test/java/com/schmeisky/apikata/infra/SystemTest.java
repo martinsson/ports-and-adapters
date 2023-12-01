@@ -1,7 +1,6 @@
-package com.schmeisky.apikata;
+package com.schmeisky.apikata.infra;
 
-import com.schmeisky.apikata.infra.FileReportWriter;
-import com.schmeisky.apikata.infra.IcelandWeatherReader;
+import com.schmeisky.apikata.domain.WeatherReportController;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

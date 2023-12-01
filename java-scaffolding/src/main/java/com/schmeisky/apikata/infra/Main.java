@@ -1,8 +1,8 @@
 package com.schmeisky.apikata.infra;
 
-import com.schmeisky.apikata.ReportWriter;
-import com.schmeisky.apikata.WeatherReader;
-import com.schmeisky.apikata.WeatherReportController;
+import com.schmeisky.apikata.domain.ReportWriter;
+import com.schmeisky.apikata.domain.WeatherReader;
+import com.schmeisky.apikata.domain.WeatherReportController;
 
 public class Main {
 

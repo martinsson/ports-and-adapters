@@ -1,9 +1,7 @@
-package com.schmeisky.apikata;
+package com.schmeisky.apikata.domain;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherReportControllerTest {
 
