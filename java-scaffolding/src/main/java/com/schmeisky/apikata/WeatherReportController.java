@@ -1,7 +1,6 @@
 package com.schmeisky.apikata;
 
-import com.schmeisky.apikata.infra.ReportWriter;
-import com.schmeisky.apikata.infra.WeatherReader;
+import com.schmeisky.apikata.infra.FileReportWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +8,9 @@ import java.util.List;
 public class WeatherReportController {
 
     private final WeatherReader weatherReader;
-    private final ReportWriter reportWriter;
+    private final FileReportWriter reportWriter;
 
-    public WeatherReportController(WeatherReader weatherReader, ReportWriter reportWriter) {
+    public WeatherReportController(WeatherReader weatherReader, FileReportWriter reportWriter) {
         this.weatherReader = weatherReader;
         this.reportWriter = reportWriter;
     }
@@ -19,7 +18,7 @@ public class WeatherReportController {
     public void put(String stationId) {
         var observations = weatherReader.readWeatherReport(stationId);
         var csvLines = computeWeatherReport(observations);
-        reportWriter.writeCsvFile(stationId, csvLines);
+        reportWriter.writeCsv(stationId, csvLines);
     }
 
     private static ArrayList<String> computeWeatherReport(List<Observation> observations) {

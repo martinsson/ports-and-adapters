@@ -2,6 +2,7 @@ package com.schmeisky.apikata.infra;
 
 import com.google.gson.Gson;
 import com.schmeisky.apikata.Observation;
+import com.schmeisky.apikata.WeatherReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,13 +15,14 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
-public class WeatherReader {
+public class IcelandWeatherReader implements WeatherReader {
+     @Override
      public List<Observation> readWeatherReport(String stationId) {
         final URL url = obtainUrl(stationId);
 
         final Result result = doRequest(url);
 
-        return result.getResults().stream().map(WeatherReader::toObservation).collect(toList());
+        return result.getResults().stream().map(IcelandWeatherReader::toObservation).collect(toList());
     }
 
     private static Result doRequest(URL url) {
