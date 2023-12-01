@@ -10,8 +10,8 @@ public class FakeReportWriter implements ReportWriter {
     private Map<String, List<String>> results = new HashMap<>();
 
     @Override
-    public void writeCsv(String stationId, List<String> csvLines) {
-        this.results.put(stationId, csvLines);
+    public void write(String destination, List<String> lines) {
+        this.results.put(destination, lines);
     }
 
     public String getContentFor(String number) {

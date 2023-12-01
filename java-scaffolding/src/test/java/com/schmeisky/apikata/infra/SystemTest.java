@@ -1,6 +1,6 @@
 package com.schmeisky.apikata.infra;
 
-import com.schmeisky.apikata.domain.WeatherReportController;
+import com.schmeisky.apikata.domain.SaveReportService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,7 +17,7 @@ class SystemTest {
 
     @Test
     void savesTheReportAsCsv() {
-        new WeatherReportController(new IcelandWeatherReader(), new FileReportWriter()).saveObservationsFor(stationId);
+        new SaveReportService(new IcelandObservationsReader(), new FileReportWriter()).saveObservationsFor(stationId);
         Assertions.assertThat(new File(stationId + ".csv")).exists();
     }
 
@@ -25,7 +25,7 @@ class SystemTest {
     void hasAllTheData() throws Exception {
         var expectedColumns = "id,name,date,time,temperature,pressure,wind_direction";
 
-        new WeatherReportController(new IcelandWeatherReader(), new FileReportWriter()).saveObservationsFor(stationId);
+        new SaveReportService(new IcelandObservationsReader(), new FileReportWriter()).saveObservationsFor(stationId);
 
         String content = Files.readString(Paths.get(stationId + ".csv"));
         Assertions.assertThat(content).startsWith(expectedColumns);
@@ -33,7 +33,7 @@ class SystemTest {
 
     @Test
     void hasSomeContent() throws IOException {
-        new WeatherReportController(new IcelandWeatherReader(), new FileReportWriter()).saveObservationsFor(stationId);
+        new SaveReportService(new IcelandObservationsReader(), new FileReportWriter()).saveObservationsFor(stationId);
         var content = Files.readAllLines(Paths.get(stationId + ".csv"));
         Assertions.assertThat(content).hasSizeGreaterThan(1);
         Assertions.assertThat(content.get(1)).matches("1,Reykjavík,.*,.*,.*,.*,.*");

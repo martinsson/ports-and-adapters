@@ -3,7 +3,7 @@ package com.schmeisky.apikata.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObservationCsvMapper {
+public class CsvMapper {
     public static ArrayList<String> toCsv(List<Observation> observations) {
         var csvLines = new ArrayList<String>();
         csvLines.add("id,name,date,time,temperature,pressure,wind_direction");

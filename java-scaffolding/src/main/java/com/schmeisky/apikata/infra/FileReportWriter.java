@@ -8,9 +8,9 @@ import java.util.List;
 
 public class FileReportWriter implements ReportWriter {
      @Override
-     public void writeCsv(String stationId, List<String> csvLines) {
-        try (FileWriter fileWriter = new FileWriter(stationId + ".csv")) {
-            for (String line : csvLines) {
+     public void write(String destination, List<String> lines) {
+        try (FileWriter fileWriter = new FileWriter(destination + ".csv")) {
+            for (String line : lines) {
                 fileWriter.write(line + "\n");
             }
         } catch (IOException e) {
