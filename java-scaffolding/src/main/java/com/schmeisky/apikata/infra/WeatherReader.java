@@ -1,6 +1,7 @@
-package com.schmeisky.apikata;
+package com.schmeisky.apikata.infra;
 
 import com.google.gson.Gson;
+import com.schmeisky.apikata.Observation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,15 +9,13 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
 public class WeatherReader {
-    List<Observation> readWeatherReport(String stationId) {
+     public List<Observation> readWeatherReport(String stationId) {
         final URL url = obtainUrl(stationId);
 
         final Result result = doRequest(url);

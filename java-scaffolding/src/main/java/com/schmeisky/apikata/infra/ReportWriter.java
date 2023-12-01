@@ -1,11 +1,11 @@
-package com.schmeisky.apikata;
+package com.schmeisky.apikata.infra;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
 public class ReportWriter {
-    void writeCsvFile(String stationId, List<String> csvLines) {
+     public void writeCsvFile(String stationId, List<String> csvLines) {
         try (FileWriter fileWriter = new FileWriter(stationId + ".csv")) {
             for (String line : csvLines) {
                 fileWriter.write(line + "\n");

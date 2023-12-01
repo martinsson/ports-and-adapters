@@ -1,5 +1,8 @@
 package com.schmeisky.apikata;
 
+import com.schmeisky.apikata.infra.ReportWriter;
+import com.schmeisky.apikata.infra.WeatherReader;
+
 import java.util.ArrayList;
 import java.util.List;
 
