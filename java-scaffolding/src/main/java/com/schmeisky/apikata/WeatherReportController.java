@@ -1,16 +1,14 @@
 package com.schmeisky.apikata;
 
-import com.schmeisky.apikata.infra.FileReportWriter;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherReportController {
 
     private final WeatherReader weatherReader;
-    private final FileReportWriter reportWriter;
+    private final ReportWriter reportWriter;
 
-    public WeatherReportController(WeatherReader weatherReader, FileReportWriter reportWriter) {
+    public WeatherReportController(WeatherReader weatherReader, ReportWriter reportWriter) {
         this.weatherReader = weatherReader;
         this.reportWriter = reportWriter;
     }
