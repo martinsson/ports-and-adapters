@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -14,9 +15,9 @@ public class WeatherReportController {
 
     public void put(String stationId) {
         try {
-            final URL url = new URL("https://apis.is/weather/observations/en?stations=1");
+            final URL url = Path.of("example.json").toUri().toURL();
             try(InputStream inputStream = url.openStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)
             ) {
                 final Gson gson = new Gson();
                 final Result result = gson.fromJson(inputStreamReader, Result.class);

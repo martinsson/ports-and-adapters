@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "name": "Reykjavík",
+      "time": "2023-12-01 08:00:00",
+      "err": "",
+      "link": "http://en.vedur.is/weather/observations/areas/reykjavik/#group=100&station=1",
+      "F": "2",
+      "FX": "4",
+      "FG": "8",
+      "D": "ENE",
+      "T": "-0.5",
+      "W": "",
+      "V": "",
+      "N": "",
+      "P": "1028",
+      "RH": "63",
+      "SNC": "",
+      "SND": "",
+      "SED": "",
+      "RTE": "",
+      "TD": "-6.7",
+      "R": "0.1",
+      "id": "1",
+      "valid": "1"
+    }
+  ]
+}
